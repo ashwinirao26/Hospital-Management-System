@@ -33,6 +33,7 @@
 				<form:input type="text" path="addmissionDate" />
 				<br /> <br /> Doctor Id:
 				<form:input type="text" path="doctorId" />
+				<br /> <br />
 				<form:input type="hidden" path="releasedDate" />
 				<form:input type="hidden" path="doctorVisits" />
 				<form:input type="hidden" path="doctorFees" />

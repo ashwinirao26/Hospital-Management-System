@@ -28,7 +28,7 @@ public class HospitalController {
 
 	@GetMapping("/index")
 	public ModelAndView showIndexPage() {
-		 return new ModelAndView("index");
+		return new ModelAndView("index");
 	}
 
 	@GetMapping("/ward")
@@ -40,6 +40,11 @@ public class HospitalController {
 		return mv;
 	}
 
+	@PostMapping("/ward")
+	public ModelAndView saveWard(@ModelAttribute("wardRecord") Ward ward) {
+		wardDao.saveWard(ward);
+		return new ModelAndView("redirect:/index");
+	}
 
 	@GetMapping("/wards")
 	public ModelAndView showAllWardPage() {
@@ -48,6 +53,7 @@ public class HospitalController {
 		mv.addObject("wardReport", wardList);
 		return mv;
 	}
+
 	@GetMapping("/doctor")
 	public ModelAndView showDoctorEntryPage() {
 		ModelAndView mv = new ModelAndView("DoctorEntry");
@@ -57,12 +63,40 @@ public class HospitalController {
 		return mv;
 	}
 
+	@PostMapping("/doctor")
+	public ModelAndView saveDoctor(@ModelAttribute("doctorRecord") Doctor doctor) {
+		doctorDao.saveDoctor(doctor);
+		return new ModelAndView("redirect:/index");
+	}
+
+	@GetMapping("/doctors")
+	public ModelAndView showAllDoctorPage() {
+		ModelAndView mv = new ModelAndView("doctorReportPage");
+		List<Doctor> doctorList = doctorDao.displayAllDoctors();
+		mv.addObject("doctorReport", doctorList);
+		return mv;
+	}
+
 	@GetMapping("/patient")
 	public ModelAndView showPatientEntryPage() {
 		ModelAndView mv = new ModelAndView("PatientEntry");
 		Integer newId = patientDao.generateNewPatientId();
 		Patient patient = new Patient(newId);
 		mv.addObject("patientRecord", patient);
+		return mv;
+	}
+
+	@PostMapping("/patient")
+	public ModelAndView savePatient(@ModelAttribute("patientRecord") Patient patient) {
+		patientDao.savePatient(patient);
+		return new ModelAndView("redirect:/index");
+	}
+
+	@GetMapping("/patients")
+	public ModelAndView showAllPatientPage() {
+		ModelAndView mv = new ModelAndView("patientReportPage");
+		List<Patient> patientList = patientDao.displayAllPatients();
+		mv.addObject("patientReport", patientList);
 		return mv;
 	}
 }
