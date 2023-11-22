@@ -20,8 +20,8 @@
 				<form:input type="text" path="wardName" />
 				<br /> <br /> Beds:
 				<form:input type="text" path="beds" />
-				<br /> <br /> Available:
-				<form:input type="text" path="available" />
+				<!--  <br /> <br /> Available: -->
+				<form:input type="hidden" path="available" />
 				<br /> <br /> Fare Per Day:
 				<form:input type="text" path="farePerDay" />
 				<br /> <br />

@@ -75,6 +75,12 @@ button:hover {
 				<a href="/patients" style="text-decoration: none; color: white;">Patient
 					List</a>
 			</button>
+			</button>
+			&nbsp;&nbsp;
+			<button type="submit">
+				<a href="/patient-find" style="text-decoration: none; color: white;">Patient
+					Release</a>
+			</button>
 		</h2>
 	</div>
 </body>
