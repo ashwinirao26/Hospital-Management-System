@@ -24,7 +24,7 @@
 				<br /> <br /> Fee:
 				<form:input type="text" path="fee" />
 				<br /> <br />Patient Count:
-				<form:input type="text" path="patientCount" />
+				<form:input type="text" path="patientCount" value="0" readOnly="true"/> 
 				<br /> <br />
 				<button type="submit">Submit</button>
 			</h3>

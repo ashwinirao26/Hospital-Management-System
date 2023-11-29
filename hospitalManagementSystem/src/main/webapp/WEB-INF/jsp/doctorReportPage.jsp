@@ -5,29 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ward Report Page</title>
+<title>Doctor Report Page</title>
 </head>
 <body>
 	<div align="center">
 		<h1>
-			<u>All Wards</u>
+			<u>All Doctors</u>
 		</h1>
 		<h3>
 			<table border="2">
 				<tr>
-					<th>Ward Id</th>
-					<th>Ward Name</th>
-					<th>Beds</th>
-					<th>Available</th>
-					<th>Fare Per Day</th>
+					<th>Doctor Id</th>
+					<th>Doctor Name</th>
+					<th>Specialization</th>
+					<th>Fee</th>
+					<th>Patient Count</th>
 				</tr>
-				<c:forEach items="${wardReport}" var="ward">
+				<c:forEach items="${doctorReport}" var="doctor">
 					<tr>
-						<td>${ward.wardId}</td>
-						<td>${ward.wardName}</td>
-						<td>${ward.beds}</td>
-						<td>${ward.available}</td>
-						<td>${ward.farePerDay}</td>
+						<td>${doctor.doctorId}</td>
+						<td>${doctor.doctorName}</td>
+						<td>${doctor.specialization}</td>
+						<td>${doctor.fee}</td>
+						<td>${doctor.patientCount}</td>
 					</tr>
 				</c:forEach>
 			</table>
